@@ -3,17 +3,27 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Palak Arora</title>
-  <link rel="icon" href="images/image2.png" type="image/x-icon">
-	<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
-  
-  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
- 
+  	<link href="css/stylesheet.css" rel="stylesheet" type="text/css">
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script>
+  		$("#slideshow > div:gt(0)").hide();
+
+		setInterval(function() 
+		{ 
+		  $('#slideshow > div:first')
+		  .fadeOut(1000)
+		  .next()
+		  .fadeIn(1000)
+		  .end()
+		  .appendTo('#slideshow');
+		}, 3000);
+  	</script>	
+  			
 </head>
 <body>
 
 <div class="topnav">
-  <a href="https://drive.google.com/file/d/1WzFrtVnTloYMGAkwt7-sebndikXV6pws/view?usp=sharing">Resume</a>
   <a href="#education">Education</a>
   <a href="#workex">Experience</a>
   <a href="#projects">Projects</a>
@@ -23,42 +33,76 @@
 </div>
 
 <div id="intro">
-  
-  <img src="images/image1.png" align="right" alt="Palak" style="padding-right: 200px">
-  <h1>PALAK ARORA</h1>
-  <p>Senior Business Systems Analyst at American Express</p>
+	<img src="images/image1.png" align="right" alt="Palak" style="padding-right: 100px">
+</br>
+ 	<h2 class="ani">Hi! I am PALAK ARORA</h2>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+	<script type="text/javascript">
+		var textWrapper = document.querySelector('.ani');
+		textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+		anime.timeline({loop: true})
+		.add({
+		targets: '.ani .letter',
+		opacity: [0,1],
+		easing: "easeInOutQuad",
+		duration: 2250,
+		delay: (el, i) => 150 * (i+1)
+		}).add({
+		targets: '.ani',
+		opacity: 0,
+		duration: 1000,
+		easing: "easeOutExpo",
+		delay: 1000
+		});
+	</script>
+	<div id="bottom">
+  	<h4 style="display:inline">I am a <p style="color:#a80000; display:inline">Sr. Business Systems Analyst</p> at 
+  	<a><img src="images/amexlogo.png" style="width:200px;height:115px;display:inline" align="center" alt="AMEX"></a></h4>
+  	<h4 style="display:inline">and a <p style="color:#a80000; display:inline">watercolorist</p>. Here's my artwork!</h4>
+  	</div>
 </div>
 
-<div class="main" id="education">
-  <h1>Educational Qualifications:</h1>
-  <div class="timeline">
-  <div class="container left">
-    <div class="content">
-      <h2>2016-2020</h2>
-      <p><b>Dr. SPM International Institute of Information Technology, Naya Raipur, India</b></br>Bachelor of Technology</br> Computer Science & Engineering</br>CGPA: 8.78/10</p>
-    </div>
-  </div>
-  <div class="container right">
-    <div class="content">
-      <h2>2014-2016</h2>
-      <p><b>Delhi Public School,Bhilai, India</b></br>Class XII, AISSCE</br>CBSE(Science)</br>Percentage: 91.2%</p>
-    </div>
-  </div>
-  <div class="container left">
-    <div class="content">
-      <h2>2013-2014</h2>
-      <p><b>Delhi Public School,Bhilai, India</b></br>Class X, AISSE</br>CBSE</br>Percentage: 93%</p>
-    </div>
-  </div>
+<div id="slideshow">
+   <div>
+     <img src="images/IMG_20210522_210426.jpg" style="width:400px;height:300px;">
+   </div>
+   <div>
+     <img src="images/IMG_20210620_023354__01.jpg" style="width:400px;height:300px;">
+   </div>
+   <div>
+     <img src="images/IMG_20210626_134035__01.jpg" style="width:400px;height:300px;">
+   </div>
+   <div>
+     <img src="images/IMG_20210627_112036.jpg" style="width:400px;height:300px;">
+   </div>
 </div>
-  
+
+
+
+<div class="main" id="education">
+  <h1>Education:</h1>
+  <ul>
+  <li><p id="workex2"><a href="https://www.iiitnr.ac.in/"><b>IIIT Naya Raipur</b></a>
+  </br></br><b>Bachelor of Technology</b> </br>Computer Science & Engineering</br>
+  	Batch 2016-2020; CGPA: 8.81/10
+  </p></li>
+  <hr>
+  <li>
+  	<p id="workex2"><b>Delhi Public School, Bhilai, Chhattisgarh</b></br></br><b>CBSE Science</b> </br><b>Percentage: </b>91.2%
+  </p></li>
 </div>
 
 
 <div class="main" id="workex">
   <h1>Work Experience:</h1>
   <ul>
-  <li><p id="workex2"><b>American Express, Gurugram, Haryana, India</b></br></br><b>Senior Business Systems Analyst</b> </br><b>Tech Stack:</b> Python, SQL, Hadoop, HiveQL, SAS Tableau
+  <li><p id="workex2"><b>American Express, Gurugram, Haryana, India</b></br></br><b>Senior Business Systems Analyst</b> </br>
+  </br>
+  </p></li>
+  <hr>
+  
+  <li><p id="workex2"><b>American Express, Gurugram, Haryana, India</b></br></br><b>Analyst Intern</b> </br><b>Tech Stack:</b> Python, SQL, Hadoop, HiveQL, SAS Tableau
 </br>
   </p></li>
   <hr>
@@ -71,8 +115,8 @@ for the APIs. Find my work documented <a href='https://github.com/palak2110/CI-C
   <b>Project:</b>​ Completed a descriptive analysis of “Marketing Management: An Indian Perspective” by Philip Kotler, Case Study analysis of three HBR cases, analysis of an HBR article.
   </p></li>
   </ul>
-
 </div>
+
 <div class="main" id="projects">
   <h1>Academic Projects:</h1>
   <ul>
@@ -121,7 +165,7 @@ for the APIs. Find my work documented <a href='https://github.com/palak2110/CI-C
     <span><i class="fa fa-envelope" style="font-size: 36px"></i></span>
   </div>
   <div class="text_div">
-    <span>palakarora2110@gmail.com</span>
+    <span>palakarora21101997@gmail.com</span>
   </div>
 </br>
 </br>
@@ -136,8 +180,8 @@ for the APIs. Find my work documented <a href='https://github.com/palak2110/CI-C
 
 </br>
 
-<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="arorapalak"><a style="color: #a80000" class="LI-simple-link" href='https://in.linkedin.com/in/arorapalak?trk=profile-badge'>LinkedIn</a></div>
-</div>
+<a href="https://in.linkedin.com/in/arorapalak?trk=profile-badge"><img src="images/linkedin.png" style="width:70px;height:70px;" align="center" alt="Linkedin" style="padding:10px"></a>
+              
 </br>
 
 <div align="right"><a href="#intro"><span style="font-size: 75px">&#8593;</span></a></div>
